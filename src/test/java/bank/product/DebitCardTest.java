@@ -17,14 +17,14 @@ public class DebitCardTest {
     }
 
     @Test
-    @DisplayName("Депозит увеличил баланс")
+    @DisplayName("Депозит увеличил баланс счета")
     public void depositIncreasesBalance() {
         card.deposit(BigDecimal.valueOf(200));
         assertEquals(BigDecimal.valueOf(700), card.getBalance());
     }
 
     @Test
-    @DisplayName("Вывод средств привел к уменьшению баланса")
+    @DisplayName("Вывод средств привел к уменьшению баланса счета")
     public void debitReducesBalance() {
         card.debit(BigDecimal.valueOf(300));
         assertEquals(BigDecimal.valueOf(200),card.getBalance());
