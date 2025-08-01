@@ -18,10 +18,7 @@ public abstract class Card implements Account {
         this.balance = balance;
     }
 
-    /**
-     *  Пополнение баланса на значение amount
-     *  проверка на null и значение amount <= 0
-     */
+    
     public void deposit(@NonNull BigDecimal amountDeposit){
         if(amountDeposit.compareTo(BigDecimal.ZERO) <= 0){
             throw new IllegalArgumentException(illArg);
@@ -29,10 +26,7 @@ public abstract class Card implements Account {
         balance = balance.add(amountDeposit);
     }
 
-    /**
-     *  Списание средств на значение amountDebit
-     *  с проверкой на null и значение amountDebit <= 0, а также что баланс < 0
-     */
+   
     public void debit (@NonNull BigDecimal amountDebit){
         if (amountDebit.compareTo(BigDecimal.ZERO) <= 0){
             throw new IllegalArgumentException(illArg);
