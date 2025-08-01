@@ -18,7 +18,7 @@ public class DepositTest {
     }
 
     @Test
-    @DisplayName("Депозит должен увеличить баланс")
+    @DisplayName("Депозит увеличивает баланс")
     public void depositIncreasesBalance() {
         deposit.deposit(BigDecimal.valueOf(5000));
         assertEquals(BigDecimal.valueOf(15000), deposit.getBalance());
