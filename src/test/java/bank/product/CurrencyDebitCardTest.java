@@ -15,7 +15,7 @@ public class CurrencyDebitCardTest {
        card = new CurrencyDebitCard("MultiCurrency", "GBP" , BigDecimal.valueOf(200));
    }
     @Test
-    @DisplayName("Депозит должен увеличить баланс")
+    @DisplayName("Увеличение баланса депозита")
     public void depositIncreasesBalance() {
         card.deposit(BigDecimal.valueOf(100));
 
@@ -23,7 +23,7 @@ public class CurrencyDebitCardTest {
     }
 
     @Test
-    @DisplayName("Вывод средств должен привести к уменьшению баланса")
+    @DisplayName("Вывод средств привел к уменьшению баланса счета")
     public void debitReducesBalance(){
         card.debit(BigDecimal.valueOf(50));
 
