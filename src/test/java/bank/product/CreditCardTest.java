@@ -21,7 +21,7 @@ public class CreditCardTest {
 
 
     @Test
-    @DisplayName("Снятие средств должно привести к сокращению баланса и увеличению долга")
+    @DisplayName("Списание средств привело к сокращению баланса счета и увеличению долга")
     public void testCreditCardOperations() {
         card.debit(BigDecimal.valueOf(200));
 
@@ -30,7 +30,7 @@ public class CreditCardTest {
     }
 
     @Test
-    @DisplayName("Депозит должен уменьшить долг перед увеличением баланса")
+    @DisplayName("Депозит уменьшился перед увеличением баланса счета")
     public void depositReducesDebFirst() {
         card.debit(BigDecimal.valueOf(300));
         card.deposit(BigDecimal.valueOf(100));
@@ -40,7 +40,7 @@ public class CreditCardTest {
     }
 
     @Test
-    @DisplayName("Депозит должен увеличить баланс после погашения долга")
+    @DisplayName("При погашении депозит баланс счета увеличился")
     public void depositIncreasesBalanceAfterClearance() {
         card.debit(BigDecimal.valueOf(300));
         card.deposit(BigDecimal.valueOf(400));
@@ -57,7 +57,7 @@ public class CreditCardTest {
     }
 
     @Test
-    @DisplayName("При выводе средств, превышающих доступные, должно возникнуть исключение")
+    @DisplayName("При выводе средств, превышающих доступные, возникает исключение")
     public void debitExceedingFundsTrowsException() {
         assertThrows(IllegalStateException.class,
                 ()-> card.debit(BigDecimal.valueOf(1500)));
