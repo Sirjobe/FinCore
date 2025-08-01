@@ -16,12 +16,7 @@ public class CreditCard extends Card{
         this.interestRate = interestRate;
     }
 
-    /**
-     * Пополнение баланса на значение amount
-     * проверка на null и значение amount <= 0
-     *
-     * @param amount
-     */
+    
     @Override
     public void deposit(@NonNull BigDecimal amount) {
         if (debt.compareTo(BigDecimal.ZERO) > 0){
@@ -38,12 +33,7 @@ public class CreditCard extends Card{
 
     }
 
-    /**
-     * Списание средств на значение amountDebit
-     * с проверкой на null и значение amountDebit <= 0, а также что баланс < 0
-     *
-     * @param amountDebit
-     */
+    
     @Override
     public void debit(@NonNull BigDecimal amountDebit) {
 
